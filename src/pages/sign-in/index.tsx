@@ -6,11 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useMutation } from "@tanstack/react-query";
-import { AuthService } from "@/src/services/auth";
-
-interface LoginPageProps {
-  onLogin: () => void;
-}
+import { authStore } from "@/src/store/auth";
 
 const loginSchema = z.object({
   email: z.string().email("E-mail inválido"),
@@ -19,7 +15,7 @@ const loginSchema = z.object({
 
 type LoginFormInputs = z.infer<typeof loginSchema>;
 
-export const SignIn: React.FC<LoginPageProps> = ({ onLogin }) => {
+export const SignIn: React.FC = () => {
   const {
     register,
     handleSubmit,
@@ -29,11 +25,7 @@ export const SignIn: React.FC<LoginPageProps> = ({ onLogin }) => {
   });
 
   const loginMutation = useMutation({
-    mutationFn: AuthService.login,
-    onSuccess: () => {
-      onLogin(); // Update parent state/context if needed, though AuthContext might handle it separately if structured differently.
-      // Assuming onLogin updates the global state as per original implementation.
-    },
+    mutationFn: authStore.login,
   });
 
   const onSubmit = (data: LoginFormInputs) => {

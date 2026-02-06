@@ -1,18 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { DashboardIcon } from "./icons/DashboardIcon";
-import { CreditCardIcon } from "./icons/CreditCardIcon";
-import { BtcIcon } from "./icons/BtcIcon";
-import { WalletIcon } from "./icons/WalletIcon";
-import { PixIcon } from "./icons/PixIcon";
-import { HistoryIcon } from "./icons/HistoryIcon";
-import { ProfileIcon } from "./icons/ProfileIcon";
-import { LogoutIcon } from "./icons/LogoutIcon";
-import { XIcon } from "./icons/XIcon";
-import { LocationIcon } from "./icons/LocationIcon";
-import { ShieldIcon } from "./icons/ShieldIcon";
-import { CardCheckIcon } from "./icons/CardCheckIcon";
-import { NavItem } from "./molecules/nav-link";
+import { DashboardIcon } from "../../icons/DashboardIcon";
+import { CreditCardIcon } from "../../icons/CreditCardIcon";
+import { BtcIcon } from "../../icons/BtcIcon";
+import { WalletIcon } from "../../icons/WalletIcon";
+import { PixIcon } from "../../icons/PixIcon";
+import { HistoryIcon } from "../../icons/HistoryIcon";
+import { ProfileIcon } from "../../icons/ProfileIcon";
+import { LogoutIcon } from "../../icons/LogoutIcon";
+import { XIcon } from "../../icons/XIcon";
+import { LocationIcon } from "../../icons/LocationIcon";
+import { ShieldIcon } from "../../icons/ShieldIcon";
+import { CardCheckIcon } from "../../icons/CardCheckIcon";
+import { NavItem } from "../../molecules/nav-link";
 
 const navItems = [
   { icon: <DashboardIcon />, label: "Dashboard", to: "/" },
