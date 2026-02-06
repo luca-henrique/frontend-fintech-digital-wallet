@@ -1,0 +1,5 @@
+{
+  "name": "FinTech Digital Wallet",
+  "description": "A comprehensive FinTech platform for managing BRL balance, converting credit card limits to PIX, buying cryptocurrencies, and managing digital wallets and PIX keys.",
+  "requestFramePermissions": []
+}
