@@ -16,13 +16,10 @@ import {
 } from "../@types/types";
 
 import { useNavigate } from "react-router-dom";
-import { useWallet } from "../context/WalletContext";
-import { useNotification } from "../context/NotificationContext";
 
 const BalanceToCrypto: React.FC = () => {
   const navigate = useNavigate();
   const { addTransaction, wallets, cryptoPrices } = useWallet();
-  const { addNotification } = useNotification();
   const [brlAmount, setBrlAmount] = useState("");
   const [asset, setAsset] = useState<CryptoAsset>(CryptoAsset.BTC);
   const [walletId, setWalletId] = useState("");
@@ -105,21 +102,9 @@ const BalanceToCrypto: React.FC = () => {
       setIsProcessing(false);
 
       if (isApproved) {
-        addNotification({
-          type: "success",
-          title: "Compra Aprovada!",
-          message: "Sua cripto está a caminho da sua carteira.",
-        });
         setTimeout(() => {
           handleSuccess();
         }, 500); // Short delay to allow user to see notification before page change
-      } else {
-        addNotification({
-          type: "error",
-          title: "Pagamento Recusado",
-          message:
-            "Não foi possível processar a compra. Verifique os dados do cartão.",
-        });
       }
     }, 2000);
   };

@@ -12,7 +12,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <div className="w-full">
         <label
           htmlFor={id}
-          className="block text-sm font-medium text-slate-600 dark:text-dark-text-secondary mb-1"
+          className="block text-sm font-medium text-slate-600  mb-1"
         >
           {label}
         </label>
@@ -25,7 +25,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             id={id}
-            className={`w-full bg-slate-100 dark:bg-slate-700 border ${error ? "border-red-500 focus:ring-red-500 focus:border-red-500" : "border-slate-300 dark:border-dark-border focus:ring-brand-accent focus:border-brand-accent"} dark:border-dark-border rounded-lg py-2 text-slate-900 dark:text-dark-text focus:ring-2 transition duration-200 ${icon ? "pl-10" : "px-3"} ${className || ""}`}
+            className={`w-full bg-slate-100  border ${error ? "border-red-500 focus:ring-red-500 focus:border-red-500" : "border-slate-300 dark:border-dark-border focus:ring-brand-accent focus:border-brand-accent"} dark:border-dark-border rounded-lg py-2 text-slate-900 dark:text-dark-text focus:ring-2 transition duration-200 ${icon ? "pl-10" : "px-3"} ${className || ""}`}
             {...props}
           />
         </div>

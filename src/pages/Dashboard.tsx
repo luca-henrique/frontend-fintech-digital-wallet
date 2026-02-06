@@ -40,10 +40,8 @@ const QuoteSkeleton: React.FC = () => (
 );
 
 import { useWallet } from "../context/WalletContext";
-import { useTheme } from "../context/ThemeContext";
 
 const Dashboard: React.FC = () => {
-  const { theme } = useTheme();
   const { userBalance, cryptoPrices, transactions } = useWallet();
   const navigate = useNavigate();
   const [displayedBalance, setDisplayedBalance] = useState(userBalance);
@@ -119,7 +117,7 @@ const Dashboard: React.FC = () => {
             </h2>
           </div>
           <div className="flex-1">
-            <TradingViewWidget theme={theme} />
+            <TradingViewWidget />
           </div>
         </Card>
 

@@ -1,6 +1,5 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { useTheme } from "../context/ThemeContext";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Dashboard from "../pages/Dashboard";
@@ -17,7 +16,6 @@ import TransactionSuccess from "../pages/TransactionSuccess";
 import { useState, useEffect } from "react";
 
 export const Routers = () => {
-  const { theme, setTheme } = useTheme();
   const { isLoggedIn, logout } = useAuth();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
@@ -33,8 +31,6 @@ export const Routers = () => {
       className={`flex h-screen bg-slate-100 dark:bg-dark-bg text-slate-800 dark:text-dark-text font-sans transition-colors duration-300`}
     >
       <Sidebar
-        theme={theme}
-        setTheme={setTheme}
         isOpen={isSidebarOpen}
         setIsOpen={setSidebarOpen}
         onLogout={logout}

@@ -64,11 +64,9 @@ const isCardExpired = (expiry: string): boolean => {
 };
 
 import { useWallet } from "../context/WalletContext";
-import { useNotification } from "../context/NotificationContext";
 
 const CardToPix: React.FC = () => {
   const { addTransaction } = useWallet();
-  const { addNotification } = useNotification();
   const [amount, setAmount] = useState("");
   const [pixKey, setPixKey] = useState("");
   const [selectedCardId, setSelectedCardId] = useState(
@@ -169,18 +167,7 @@ const CardToPix: React.FC = () => {
       });
 
       if (isApproved) {
-        addNotification({
-          type: "success",
-          title: "PIX Enviado!",
-          message: `R$ ${finalAmount.toFixed(2)} foi enviado para a chave PIX.`,
-        });
         clearForm();
-      } else {
-        addNotification({
-          type: "error",
-          title: "Falha na Transação",
-          message: "Não foi possível processar seu pagamento. Tente novamente.",
-        });
       }
       setIsProcessing(false);
     }, 2000);

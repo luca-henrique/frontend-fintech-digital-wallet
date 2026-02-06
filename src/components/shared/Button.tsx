@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    "h-[48px] w-full rounded-lg hover:bg-brand-primary/80 font-semibold bg-black focus:outline-none focus:ring-2 focus:ring-opacity-75 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2";
+    "h-[48px] w-full rounded-lg hover:gray font-semibold bg-black focus:outline-none focus:ring-2 focus:ring-opacity-75 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2";
 
   const variantStyles = {
     primary: "bg-brand-primary  text-white focus:ring-cyan-400",

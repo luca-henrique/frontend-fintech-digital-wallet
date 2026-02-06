@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import { useNotification } from "./NotificationContext";
+import { AuthService } from "../services/auth";
 
 interface AuthContextType {
   isLoggedIn: boolean;
@@ -12,19 +12,14 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const { addNotification } = useNotification();
+  const [isLoggedIn, setIsLoggedIn] = useState(AuthService.isAuthenticated()); // Initialize based on token existence
 
   const login = () => {
     setIsLoggedIn(true);
-    addNotification({
-      type: "info",
-      title: "Bem-vindo de volta!",
-      message: "Sessão iniciada com segurança.",
-    });
   };
 
   const logout = () => {
+    AuthService.logout();
     setIsLoggedIn(false);
   };
 

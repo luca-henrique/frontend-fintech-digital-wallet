@@ -43,10 +43,7 @@ const initialPlaces = [
   },
 ];
 
-import { useNotification } from "../context/NotificationContext";
-
 const Location: React.FC = () => {
-  const { addNotification } = useNotification();
   const globeRef = useRef<any>(null);
   const [placesData, setPlacesData] = useState(initialPlaces);
   const [selectedPlace, setSelectedPlace] = useState<any>(null);
@@ -116,11 +113,6 @@ const Location: React.FC = () => {
         );
       }
 
-      addNotification({
-        type: "success",
-        title: "Localização Adicionada!",
-        message: `${address} foi marcado no globo.`,
-      });
       setAddress("");
     }, 1500);
   };
